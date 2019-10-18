@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>database</module>
         <module>baseapi</module>
         <module>service</module>
+        <module>dataapi</module>
     </modules>
 
     <parent>
