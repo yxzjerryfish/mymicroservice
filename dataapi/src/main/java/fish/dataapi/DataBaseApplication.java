@@ -1,5 +1,6 @@
 package fish.dataapi;
 
+import fish.service.api.ServiceSayHello;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class DataBaseApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		new ServiceSayHello().say(Thread.currentThread().getName());
 	}
 
 

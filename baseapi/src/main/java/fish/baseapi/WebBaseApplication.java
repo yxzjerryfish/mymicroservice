@@ -1,6 +1,9 @@
 package fish.baseapi;
 
+import fish.service.api.ServiceSayHello;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -15,8 +18,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @Slf4j
 @EnableDiscoveryClient
 @SpringBootApplication
-public class WebBaseApplication {
+public class WebBaseApplication implements ApplicationRunner {
     public static void main(String[] args) {
         SpringApplication.run(WebBaseApplication.class, args);
+    }
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        new ServiceSayHello().say(Thread.currentThread().getName());
     }
 }
