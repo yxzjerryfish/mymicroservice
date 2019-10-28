@@ -1,6 +1,7 @@
 package fish.baseapi.getdata;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,10 @@ public class GetDataApiData {
     @RequestMapping("/base/hello")
     public String getHello(){
         return testReciveData.hello();
+    }
+
+    @RequestMapping("/base/hello/{id}")
+    public String getHello(@PathVariable String id){
+        return testReciveData.sayhello(id);
     }
 }

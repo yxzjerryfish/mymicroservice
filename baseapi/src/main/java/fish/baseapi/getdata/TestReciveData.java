@@ -14,4 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface TestReciveData {
     @RequestMapping("/hello")
     String hello();
+
+    @RequestMapping("/sayhello")
+    String sayhello(String id);
 }
