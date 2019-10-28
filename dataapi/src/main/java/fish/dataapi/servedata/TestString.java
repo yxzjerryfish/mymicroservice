@@ -21,4 +21,9 @@ public class TestString {
     public String sayHello(@RequestBody String id){
         return "Hello" + id;
     }
+
+    @RequestMapping("/hellofish")
+    public User sayHelloUser(){
+        return new User("fish",30);
+    }
 }

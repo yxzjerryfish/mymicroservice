@@ -1,5 +1,6 @@
 package fish.service.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -10,6 +11,7 @@ import lombok.Data;
  * @date : 2019/10/28 21:00
  */
 @Data
+@AllArgsConstructor
 public class User {
     String name;
     Integer age;

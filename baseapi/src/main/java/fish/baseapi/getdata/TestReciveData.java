@@ -1,5 +1,6 @@
 package fish.baseapi.getdata;
 
+import fish.service.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,4 +18,7 @@ public interface TestReciveData {
 
     @RequestMapping("/sayhello")
     String sayhello(String id);
+
+    @RequestMapping("/hellofish")
+    User sayHello();
 }
