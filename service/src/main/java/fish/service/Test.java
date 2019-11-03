@@ -19,5 +19,9 @@ public class Test {
         BiConsumer<Dog,String> biConsumer = Dog::eat;
         Dog dog = function.apply("旺财");
         biConsumer.accept(dog,"猪肉");
+
+        Function<Integer,Function<Integer,Function<Integer,Integer>>> fun = x->y->z->x+y+z;
+
+        System.out.println(fun.apply(3).apply(4).apply(5));
     }
 }
