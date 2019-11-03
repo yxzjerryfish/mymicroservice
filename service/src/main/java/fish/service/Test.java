@@ -1,5 +1,11 @@
 package fish.service;
 
+import fish.service.model.Dog;
+
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 /**
  * 给包一个main方法
  *
@@ -9,6 +15,9 @@ package fish.service;
  */
 public class Test {
     public static void main(String[] args) {
-
+        Function<String,Dog> function = Dog::new;
+        BiConsumer<Dog,String> biConsumer = Dog::eat;
+        Dog dog = function.apply("旺财");
+        biConsumer.accept(dog,"猪肉");
     }
 }
