@@ -15,4 +15,5 @@ import lombok.Data;
 public class User {
     String name;
     Integer age;
+    String desc;
 }
