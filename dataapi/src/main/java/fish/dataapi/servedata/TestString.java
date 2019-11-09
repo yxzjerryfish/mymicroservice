@@ -24,6 +24,6 @@ public class TestString {
 
     @RequestMapping("/hellofish")
     public User sayHelloUser(){
-        return new User("fish",30);
+        return new User("fish",30,null);
     }
 }
