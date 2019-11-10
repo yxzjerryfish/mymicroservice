@@ -4,9 +4,13 @@ import fish.service.model.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * 测试通过DataApi获取数据
@@ -19,6 +23,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class GetDataApiData {
     @Autowired
     TestReciveData testReciveData;
+
+    @Autowired
+    RestTemplate restTemplate;
 
     @RequestMapping("/base/hello")
     @ApiOperation(value = "通过feign获取hello")
@@ -38,4 +45,17 @@ public class GetDataApiData {
         return testReciveData.sayHello();
     }
 
+    @ApiOperation(value = "没有用feign来尝试调用微服务")
+    @RequestMapping("/nofeign/hello")
+    public String getnofeignHello(){
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://DATABASE/hello",String.class);
+        String h = responseEntity.getBody();
+        return h;
+    }
+
+    @Bean
+    @LoadBalanced
+    RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
 }
