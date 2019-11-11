@@ -49,8 +49,7 @@ public class GetDataApiData {
     @RequestMapping("/nofeign/hello")
     public String getnofeignHello(){
         ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://DATABASE/hello",String.class);
-        String h = responseEntity.getBody();
-        return h;
+        return responseEntity.getBody();
     }
 
     @Bean
