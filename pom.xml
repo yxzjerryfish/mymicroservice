@@ -8,6 +8,7 @@
         <module>service</module>
         <module>dataapi</module>
         <module>eurekaServer</module>
+        <module>gateway</module>
     </modules>
 
     <parent>
