@@ -12,6 +12,9 @@ eureka:
 
 zuul:
   routes:
-    route-name: #路由别名，无其他意义，与例1效果一致
+    route-name:
       service-id: DATABASE
       path: /database
+    webbase:
+      service-id: WEBBASE
+      path: /webbase
