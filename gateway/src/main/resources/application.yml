@@ -1,5 +1,5 @@
 server:
-  port: 1234
+  port: 80
 
 spring:
   application:
@@ -9,3 +9,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka
+
+zuul:
+  routes:
+    route-name: #路由别名，无其他意义，与例1效果一致
+      service-id: DATABASE
+      path: /database
