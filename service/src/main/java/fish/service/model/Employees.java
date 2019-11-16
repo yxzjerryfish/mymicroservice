@@ -18,7 +18,7 @@ public class Employees {
 
     @ApiModelProperty("FirstName")
     private String firstName;
-    
+
     @ApiModelProperty("LastName")
     private String lastName;
 

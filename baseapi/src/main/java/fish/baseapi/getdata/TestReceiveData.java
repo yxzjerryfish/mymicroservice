@@ -1,8 +1,11 @@
 package fish.baseapi.getdata;
 
+import fish.service.model.Employees;
 import fish.service.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * 测试调用data的来接收数据
@@ -12,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date : 2019/10/27 22:13
  */
 @FeignClient(value = "database")
-public interface TestReciveData {
+public interface TestReceiveData {
     @RequestMapping("/hello")
     String hello();
 
@@ -21,4 +24,7 @@ public interface TestReciveData {
 
     @RequestMapping("/hellofish")
     User sayHello();
+
+    @RequestMapping("/emp/getAll")
+    List<Employees> getAll();
 }
