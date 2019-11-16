@@ -1,5 +1,6 @@
 package fish.baseapi.getdata;
 
+import fish.service.api.TestControl;
 import fish.service.model.Employees;
 import fish.service.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -15,7 +16,7 @@ import java.util.List;
  * @date : 2019/10/27 22:13
  */
 @FeignClient(value = "database")
-public interface TestReceiveData {
+public interface TestReceiveData extends TestControl {
     @RequestMapping("/hello")
     String hello();
 

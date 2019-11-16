@@ -67,9 +67,15 @@ public class GetDataApiData {
         return new RestTemplate();
     }
 
-    @RequestMapping("/hello")
+    @RequestMapping("/hellos")
     @ApiOperation(value = "对外暴露hello")
     public String speakHello(){
         return "Hello Fish";
+    }
+
+    @ApiOperation(value = "testApi")
+    @RequestMapping("/tests/sayhello")
+    public String testSayHello(){
+       return testReceiveData.sayHelloFish();
     }
 }
