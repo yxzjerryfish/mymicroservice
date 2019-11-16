@@ -16,9 +16,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 public class DataBaseApplication implements ApplicationRunner {
 
-	@Autowired
-	TestMysql testMysql;
-
 	public static void main(String[] args) {
 		SpringApplication.run(DataBaseApplication.class, args);
 	}
@@ -26,7 +23,6 @@ public class DataBaseApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		new ServiceSayHello().say(Thread.currentThread().getName());
-		System.out.println(testMysql.getCount());
 	}
 
 
