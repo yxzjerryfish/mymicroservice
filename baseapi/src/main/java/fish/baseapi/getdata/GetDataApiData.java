@@ -30,6 +30,9 @@ public class GetDataApiData {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    BaseTestControl baseTestControl;
+
     @RequestMapping("/base/hello")
     @ApiOperation(value = "通过feign获取hello")
     public String getHello(){
@@ -76,6 +79,6 @@ public class GetDataApiData {
     @ApiOperation(value = "testApi")
     @RequestMapping("/tests/sayhello")
     public String testSayHello(){
-       return testReceiveData.sayHelloFish();
+       return baseTestControl.sayHelloFish();
     }
 }

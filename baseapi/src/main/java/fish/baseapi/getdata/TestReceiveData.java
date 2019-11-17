@@ -16,7 +16,7 @@ import java.util.List;
  * @date : 2019/10/27 22:13
  */
 @FeignClient(value = "database")
-public interface TestReceiveData extends TestControl {
+public interface TestReceiveData {
     @RequestMapping("/hello")
     String hello();
 
