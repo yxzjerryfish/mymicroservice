@@ -3,3 +3,14 @@
 .idea
 /out
 /target
+baseapi/baseapi.iml
+
+dataapi/dataapi.iml
+
+eurekaServer/eurekaServer.iml
+
+gateway/gateway.iml
+
+microservice.iml
+
+service/service.iml
