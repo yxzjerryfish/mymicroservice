@@ -9,6 +9,7 @@
         <module>dataapi</module>
         <module>eurekaServer</module>
         <module>gateway</module>
+        <module>nettyweb</module>
     </modules>
 
     <parent>
