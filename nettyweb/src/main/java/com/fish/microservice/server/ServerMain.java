@@ -8,4 +8,7 @@ package com.fish.microservice.server;
  * @date : 2019/12/24 21:47
  */
 public class ServerMain {
+    public static void main(String[] args) {
+
+    }
 }
