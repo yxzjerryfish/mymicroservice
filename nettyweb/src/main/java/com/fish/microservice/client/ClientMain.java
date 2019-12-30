@@ -1,5 +1,7 @@
 package com.fish.microservice.client;
 
+import io.netty.bootstrap.Bootstrap;
+
 /**
  * Client的Main方法
  *
@@ -9,6 +11,6 @@ package com.fish.microservice.client;
  */
 public class ClientMain {
     public static void main(String[] args) {
-        
+        Bootstrap bootstrap = new Bootstrap();
     }
 }
