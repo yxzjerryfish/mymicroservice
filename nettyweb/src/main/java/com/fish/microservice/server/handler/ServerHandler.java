@@ -17,6 +17,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        log.info("***************************************");
         ByteBuf byteBuf = (ByteBuf) msg;
         log.info(byteBuf.toString());
     }
