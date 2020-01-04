@@ -1,5 +1,7 @@
 package com.fish.microservice.client.handler;
 
+import com.fish.microservice.client.SayHelloImpl;
+import com.fish.microservice.util.JsonSerializerUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
@@ -20,9 +22,8 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         log.info(LocalDateTime.now() + ": 客户端开始登录");;
-        ByteBuf buf = Unpooled.buffer(10);
-        byte[] bytes = {1,2,3,4,5};
-        buf.writeBytes(bytes);
+        ByteBuf buf =  ctx.alloc().ioBuffer();
+        buf.writeBytes(JsonSerializerUtil.serialize(new SayHelloImpl()));
         ctx.channel().writeAndFlush(buf);
     }
 }

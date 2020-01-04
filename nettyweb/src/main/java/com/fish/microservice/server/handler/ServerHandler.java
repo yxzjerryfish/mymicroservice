@@ -1,5 +1,7 @@
 package com.fish.microservice.server.handler;
 
+import com.fish.microservice.util.JsonSerializerUtil;
+import fish.api.SayHello;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -19,6 +21,10 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         log.info("***************************************");
         ByteBuf byteBuf = (ByteBuf) msg;
-        log.info(byteBuf.toString());
+        int length = byteBuf.readInt();
+
+        byte[] bytes = new byte[length];
+        byteBuf.readBytes(bytes);
+        log.info(JsonSerializerUtil.deserialize(SayHello.class,bytes).say());
     }
 }
