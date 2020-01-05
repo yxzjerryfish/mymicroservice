@@ -23,7 +23,8 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         log.info(LocalDateTime.now() + ": 客户端开始登录");;
         ByteBuf buf =  ctx.alloc().ioBuffer();
-        buf.writeBytes(JsonSerializerUtil.serialize(new SayHelloImpl()));
+        byte[] bytes = JsonSerializerUtil.serialize(new SayHelloImpl());
+        buf.writeBytes(bytes);
         ctx.channel().writeAndFlush(buf);
     }
 }
