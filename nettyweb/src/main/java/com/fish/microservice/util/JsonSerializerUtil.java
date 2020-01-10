@@ -10,6 +10,9 @@ import com.alibaba.fastjson.JSON;
  * @date : 2020/1/4 16:59
  */
 public class JsonSerializerUtil {
+
+    private JsonSerializerUtil(){}
+
     public static byte[] serialize(Object object) {
 
         return JSON.toJSONBytes(object);
